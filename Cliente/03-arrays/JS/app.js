@@ -41,7 +41,7 @@ console.log(pets); //añade un elemento al principio
 
 
 const months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 0, 'Feb'); //Para 1 posicion. Param 2: 0 NISERTA en la posicion 1 Y MUEVE EL RESTO
+months.splice(1, 0, 'Feb'); //Para 1 posicion. Param 2: 0 INSERTA en la posicion 1 Y MUEVE EL RESTO
 console.log(months);
 months.splice(1, 1, 'Feb'); //Para 1 posicion. Param 2: 1 reemplaza en la posicion 1
 console.log(months);
