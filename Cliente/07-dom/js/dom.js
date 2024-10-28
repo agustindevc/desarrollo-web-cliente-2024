@@ -87,9 +87,9 @@ function cambioSubtitulo(){
 document.getElementById('subtitle').onclick = cambioSubtitulo;
 
 //opcion 1 llamada a eventos desde JS
-elemento.onclick = cambioSubtitulo;
+// elemento.onclick = cambioSubtitulo;
 
-let titleh3 = DOCUMENT.getElementById('H3title');
+let titleh3 = document.getElementById('H3title');
 titleh3.addEventListener('click', cambioSubtitulo3());
 
 elemento = document.getElementById('H3title');
@@ -100,4 +100,32 @@ function cambioSubtitulo3(){
     elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
 }
 
+let c1 = document.getElementById('caja1');
+c1.addEventListener('click', cambioClase1);
+
+let c2 = document.getElementById('caja2');
+c2.addEventListener('click', cambioClase2);
+
+
+function cambioClase1(){
+    if(c1.classList.contains('caja--negra')){
+        console.log("1")
+        c1.classList.remove('caja--negra');
+        c1.classList.add('caja--roja');
+    }else {
+        console.log("2")
+        c1.classList.remove('caja--roja');
+        c1.classList.add('caja--negra');
+    }  
+}
+
+function cambioClase2(){
+    console.log("3")
+    if(c2.classList.contains('caja--negra')){
+        c2.classList.remove('caja--negra');
+        c2.classList.add('caja--roja');
+    }else {
+        console.log("4")
+        c2.classList.replace('caja--roja','caja--negra');
+    }  
 }
