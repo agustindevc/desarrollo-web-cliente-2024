@@ -73,14 +73,6 @@ function iniciarCarrera(){
 
 }
 
-// OPCION 1
-// document.getElementById('reiniciar').onclick = function () {
-//     div1.style.setProperty("left", "0px");
-//     div2.style.setProperty("left", "0px");
-//     div3.style.setProperty("left", "0px");
-//     div4.style.setProperty("left", "0px");
-//     clearInterval(timer);
-// };
 
 
 // OPCION 2
