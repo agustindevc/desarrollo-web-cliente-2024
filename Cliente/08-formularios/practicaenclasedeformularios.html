@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Prueba 1</title>
+    <style type="text/css">
+      #nombreError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      #nombreError.visible {
+        display: block;
+      }
+
+      input.invalido {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+        <label for="name">Nombre: </label>
+        <input type="text" name="name" id="name" required autocomplete="off">
+        <button>Enviar</button>
+      </form>
+      
+    <script>
+     const miInput = document.querySelector('input');
+
+// Quita la validación mientras escribes
+miInput.addEventListener('input', () => {
+    // Quita el mensaje según escribes
+    miInput.setCustomValidity('');
+    // Comprueba si debe validarlo
+    miInput.checkValidity();
+});
+
+// Muestra el mensaje de validación
+miInput.addEventListener('invalid', () => {
+    miInput.setCustomValidity('Si no es molesta... ¿me dices tu nombre?');
+});
+    </script>
+
+
+<form id="mi-formulario">
+    <input type="file" id="foto">
+    <button>Enviar</button>
+</form>
+    
+<script>
+    const oneMegaBytesInBytes = 10 ** 6;
+const pesoLimite = oneMegaBytesInBytes * 2; // 2 megabyte
+const extensionesPermitidas =  ['jpg','jpeg','png'];
+const miInput2 = document.querySelector('#foto');
+
+function validarImagen () {
+    // Resetea mensaje
+    miInput2.setCustomValidity('');
+
+    // Destructuramos para obtener el nombre y el tamaño
+    const { name: archivoNombre, size: archivoPeso } = this.files[0];
+
+
+    // Obtenemos la extensión
+    const fileExtension = archivoNombre.split(".").pop();
+
+    // Validamos si tienes una extensión válida
+    if (!extensionesPermitidas.includes(fileExtension)){
+        miInput2.setCustomValidity('Formato no válido, solo se admite jpg y png');
+    }
+
+    // Validamos el peso
+    if(archivoPeso > pesoLimite) {
+        miInput2.setCustomValidity('Demasiado grande');
+    }
+}
+
+miInput2.addEventListener("input", validarImagen);
+</script>
+  </body>
+</html>

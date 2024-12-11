@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Prueba 1</title>
+    <style type="text/css">
+      #nombreError {
+        display: none;
+        font-size: 0.8em;
+      }
+
+      #nombreError.visible {
+        display: block;
+      }
+
+      input.invalido {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="nombre"> Nombre* </label>
+      <input type="text" name="nombre" id="nombre" required autocomplete="off"/>
+      <button id="enviar">Enviar</button>
+
+      <span role="alert" id="nombreError" aria-hidden="true">
+        Ingrese su nombre, por favor
+      </span>
+    </form>
+    <script>
+      const enviar = document.getElementById("enviar");
+
+      /*Coloca un escuchador para ve cuando sucede el evento*/
+      enviar.addEventListener("click", validar);
+
+      function validar(e) {
+        e.preventDefault();
+
+        /*Constante para el campo nombre*/
+        const campoNombre = document.getElementById("nombre");
+        let valido = true;
+
+        if (!campoNombre.value) { /*Si no hay valor en el campo nombre...*/
+          const nombreError = document.getElementById("nombreError"); /*Toma la constante*/
+          nombreError.classList.add("visible"); /*Le asigna la clase visible*/
+          campoNombre.classList.add("invalido"); /*Le asigna la clase invalido*/
+          nombreError.setAttribute("aria-hidden", false); /*quita el hidden para que sea visibre*/
+          nombreError.setAttribute("aria-invalid", true);
+        } else {
+          nombreError.classList.remove("visible"); /*Le asigna la clase visible*/
+          campoNombre.classList.remove("invalido"); /*Le asigna la clase invalido*/
+          nombreError.setAttribute("aria-hidden", true); /*quita el hidden para que sea visibre*/
+          nombreError.setAttribute("aria-invalid", false);
+        }
+        return valido;
+      }
+    </script>
+  </body>
+</html>
