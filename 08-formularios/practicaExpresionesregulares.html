@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica de expresiones regulares</title>
+</head>
+<body>
+    <label>Matricula Coche:</label>
+    <input type="text" pattern="/^[0-9]{4}[A-Z][^AEIOU]{3}/$" required /> <!--cuatro numeros y 3 letras que no sean vocales-->
+    <span id="error" class="error"></span>
+    <br/>
+    <label>DNI:</label>
+    <input type="text" pattern="/^[0-9]{8}[A-Z]/$" required />
+    <span id="error" class="error"></span>
+    <br/>
+    <label>Fecha de aqui a un año:</label>
+    <input type="text" pattern="/^[0-9]{4}[0-9]{2}[0-9]{2}/$" required />
+    <span id="error" class="error"></span>
+    <br/>
+    <label>Matricula Moto:</label>
+    <input type="text" pattern="/^C[0-9]{1}\S[0-9]{3}\S[A-Z]{3}/$" required /> <!--cOMIENZA POR C, LUEGO UN NUMERO, ESPACIO, TRES NUMEROS Y TRES LETRAS-->
+    <span id="error" class="error"></span>
+    <br/>
+    <label>Cuenta bancaria:</label>
+    <input type="text" pattern="/^[A-Z]{2}\S[0-9]{4}\S[0-9]{4}\S[0-9]{4}\S[0-9]{4}/$" required /> <!--Dos letras seguidas de dos nuemros, espacio, cuatro numeros, espacio, cuatro numeros,espacio...-->
+    <span id="error" class="error"></span>
+    <br/>
+    <label>Contraseña:</label>
+    <input type="text" pattern="/^[\W*-]{2}\S" required />
+    <span id="error" class="error"></span>
+    <br/>
+    <label>IP:</label>
+    <input type="text" pattern="/^[0-255]{3}[0-255]{3}[0-255]{3}[0-255]{3}/$" required />
+    <span id="error" class="error"></span>
+    <br/>
+    <label>Numero de serie:</label>
+    <input type="text" pattern="/^N/S[A-Z][a-z]{10}/$" required />
+    <span id="error" class="error"></span>
+    <br/>
+    <label>Dominio:</label>
+    <input type="text" pattern="/^([a-Z0-9\-]+\.){1,2}[a-z]{2,6}/$" required />
+    <span id="error" class="error"></span>
+    <br/>
+    <button id="comprueba">Validar</button>
+</body>
+</html>
