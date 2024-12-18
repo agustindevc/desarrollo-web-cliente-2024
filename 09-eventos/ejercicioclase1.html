@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Blur</title>
+</head>
+<body>
+    <label>Nombre:</label>
+    <input type="text" onblur="myFunction()"> <!--El evento onblur se dispara cuando abandonamos el campo en el que estamos situados-->
+    <span id="error" class="error"></span>
+    <br />
+    <label>Apellido:</label>
+    <input type="text" onchange="myFunction2()"> <!--El evento onchange se dispara cuando cambia el contenido del campo en el que estamos situados-->
+    <span id="error" class="error"></span>
+    <br />
+    <label>Edad:</label>
+    <input type="text" onfocus="myFunction3()"/> <!--El evento onfocus se dispara cuando nos situamos en el campo, no debe usarse con alert porque se genera un bucle, es util para cambgiar color de fondo mienstras este situado alli por ejemplo.-->
+    <span id="error" class="error"></span>
+    <br />
+    <button id="submit">Submit</button>
+    <button id="reset">Reset</button>
+
+    <p oncopy="myFunction4()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nulla vel blanditiis non nemo odio adipisci, officia voluptas exercitationem culpa eaque recusandae, consequatur, expedita facere? Perferendis voluptatum maxime doloremque alias!</p>
+
+    <img id="img" onmouseover="crearborde()" onmouseleave="quitarborde()" src="./imagenes/android.png">
+
+    <script type="text/javascript" defer src="./blur/app.js"></script>
+</body>
+</html>
